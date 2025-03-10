@@ -8,13 +8,14 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { authenticationGuard } from './authentication.guard';
 
 export const routes: Routes = [
     {path:'',component:SignUpComponent},
     {path:'login',component:LoginComponent},
-    {path:'header',component:HeaderComponent},
-    {path:'resume',component:ResumeBuilderComponent},
-    {path:'arrayCrud',component:ArryCrudComponent},
-    {path:'arrayOfObject',component:ArrayOfObjectComponent},
-    {path:'reactiveForm',component:ReactiveFormComponent},
+    // {path:'header',component:HeaderComponent},
+    {path:'resume',component:ResumeBuilderComponent,canActivate:[authenticationGuard]},
+    {path:'arrayCrud',component:ArryCrudComponent,canActivate:[authenticationGuard]},
+    {path:'arrayOfObject',component:ArrayOfObjectComponent,canActivate:[authenticationGuard]},
+    {path:'reactiveForm',component:ReactiveFormComponent,canActivate:[authenticationGuard]},
 ];
