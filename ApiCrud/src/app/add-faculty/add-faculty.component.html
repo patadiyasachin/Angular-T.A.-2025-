@@ -1,0 +1,10 @@
+
+<form [formGroup]="facultyForm">
+    <input type="text" formControlName="createdAt" placeholder="Enter createdAtk" class="form form-control m-2 w-25">
+    <input type="text" formControlName="name" placeholder="Enter name" class="form form-control m-2 w-25">
+    <input type="text" formControlName="avatar" placeholder="Enter image address" class="form form-control m-2 w-25">
+    <input type="text" formControlName="age" placeholder="Enter age" class="form form-control m-2 w-25">
+    <input type="text" formControlName="address" placeholder="Enter address" class="form form-control m-2 w-25">
+    <input type="text" formControlName="mobileNo" placeholder="Enter mobileNo" class="form form-control m-2 w-25">
+    <button class="btn btn-primary" (click)="addFaculty(facultyForm.value)">{{id?'Edit':'Add'}}</button>
+</form>

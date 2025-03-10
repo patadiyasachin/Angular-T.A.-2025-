@@ -1,0 +1,16 @@
+<div class="row">
+  <button class="btn btn-primary w-25 ms-auto m-2" routerLink="./faculty/add">Add</button>
+</div>
+
+<div class="row">
+    <div class="card" class="col-4" *ngFor="let temp of facultyArray">
+        <img src={{temp.avatar}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{temp.name}}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <button class="btn btn-primary" routerLink="faculty/{{temp.id}}">more detail</button>
+          <button class="btn btn-danger m-2" (click)="deleteFaculty(temp.id)">Delete</button>
+          <button class="btn btn-primary" routerLink="./faculty/edit/{{temp.id}}">Edit</button>
+        </div>
+      </div>
+</div>
